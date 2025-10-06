@@ -1,0 +1,935 @@
+{
+  "version": "3.3.0",
+  "updatedAt": "2025-10-01T19:20:00Z",
+  "catalog": {
+    "muscleGroups": [
+      {
+        "group": "Chest",
+        "workouts": [
+          {
+            "name": "Barbell Bench Press",
+            "equipment": "barbell",
+            "sets": 3,
+            "recommendedReps": "5–8 or 8–12",
+            "recommendedRest": "2–3 min",
+            "primaryMuscles": [
+              "Pectoralis major (sternal, clavicular)"
+            ],
+            "secondaryMuscles": [
+              "Anterior deltoid",
+              "Triceps brachii"
+            ],
+            "description": "Set scapulae; lower to mid‑chest with forearms vertical; press to full elbow extension without excessive flare or lumbar arch."
+          },
+          {
+            "name": "Incline Barbell Press",
+            "equipment": "barbell",
+            "sets": 3,
+            "recommendedReps": "6–10",
+            "recommendedRest": "2–3 min",
+            "primaryMuscles": [
+              "Pectoralis major (clavicular)"
+            ],
+            "secondaryMuscles": [
+              "Anterior deltoid",
+              "Triceps brachii"
+            ],
+            "description": "Bench at ~30–45°; touch upper chest; keep ribs down and wrists stacked; smooth up/down tempo."
+          },
+          {
+            "name": "Dumbbell Bench Press",
+            "equipment": "dumbbell",
+            "sets": 3,
+            "recommendedReps": "8–12",
+            "recommendedRest": "90–120 s",
+            "primaryMuscles": [
+              "Pectoralis major"
+            ],
+            "secondaryMuscles": [
+              "Anterior deltoid",
+              "Triceps brachii"
+            ],
+            "description": "Descend to comfortable depth; slight elbow tuck; press along natural arc with neutral wrists."
+          },
+          {
+            "name": "Weighted Push-Up",
+            "equipment": "bodyweight",
+            "sets": 3,
+            "recommendedReps": "8–20",
+            "recommendedRest": "90–120 s",
+            "primaryMuscles": [
+              "Pectoralis major"
+            ],
+            "secondaryMuscles": [
+              "Anterior deltoid",
+              "Triceps brachii",
+              "Serratus anterior"
+            ],
+            "description": "Rigid plank; hands under shoulders; elbows ~30–45°; chest to depth; controlled lockout."
+          },
+          {
+            "name": "Ring/Bar Dips (Chest)",
+            "equipment": "bodyweight",
+            "sets": 3,
+            "recommendedReps": "6–12",
+            "recommendedRest": "120–180 s",
+            "primaryMuscles": [
+              "Pectoralis major (sternal)"
+            ],
+            "secondaryMuscles": [
+              "Anterior deltoid",
+              "Triceps brachii"
+            ],
+            "description": "Slight forward lean; descend under control; avoid anterior shoulder glide; strong lockout."
+          },
+          {
+            "name": "Seated Cable Chest Press",
+            "equipment": "cable",
+            "sets": 3,
+            "recommendedReps": "8–12",
+            "recommendedRest": "90–120 s",
+            "primaryMuscles": [
+              "Pectoralis major"
+            ],
+            "secondaryMuscles": [
+              "Anterior deltoid",
+              "Triceps brachii"
+            ],
+            "description": "Back supported; press to mid‑chest path; controlled return without excessive protraction."
+          },
+          {
+            "name": "Standing Cable Press",
+            "equipment": "cable",
+            "sets": 3,
+            "recommendedReps": "8–12",
+            "recommendedRest": "90–120 s",
+            "primaryMuscles": [
+              "Pectoralis major"
+            ],
+            "secondaryMuscles": [
+              "Anterior deltoid",
+              "Triceps brachii",
+              "Core stabilizers"
+            ],
+            "description": "Staggered stance; brace; neutral wrists; steady trunk; full lockout."
+          },
+          {
+            "name": "Cable Fly (Mid)",
+            "equipment": "cable",
+            "sets": 3,
+            "recommendedReps": "10–15",
+            "recommendedRest": "60–90 s",
+            "primaryMuscles": [
+              "Pectoralis major"
+            ],
+            "secondaryMuscles": [
+              "Anterior deltoid"
+            ],
+            "description": "Slight elbow bend; hug arc to midline; brief squeeze; slow return under tension."
+          },
+          {
+            "name": "Low-to-High Cable Fly",
+            "equipment": "cable",
+            "sets": 3,
+            "recommendedReps": "10–15",
+            "recommendedRest": "60–90 s",
+            "primaryMuscles": [
+              "Pectoralis major (clavicular)"
+            ],
+            "secondaryMuscles": [
+              "Anterior deltoid"
+            ],
+            "description": "From low pulleys, arc upward to eye level; avoid shrugging; pause at top."
+          },
+          {
+            "name": "KB Floor Press (Single/Double)",
+            "equipment": "kettlebell",
+            "sets": 3,
+            "recommendedReps": "8–12",
+            "recommendedRest": "90–120 s",
+            "primaryMuscles": [
+              "Pectoralis major"
+            ],
+            "secondaryMuscles": [
+              "Anterior deltoid",
+              "Triceps brachii"
+            ],
+            "description": "Press from packed shoulder; pause on floor each rep; stable rack; neutral wrist."
+          },
+          {
+            "name": "KB Crush Press",
+            "equipment": "kettlebell",
+            "sets": 3,
+            "recommendedReps": "10–12",
+            "recommendedRest": "60–90 s",
+            "primaryMuscles": [
+              "Pectoralis major"
+            ],
+            "secondaryMuscles": [
+              "Anterior deltoid"
+            ],
+            "description": "Squeeze bell between palms; elbows tuck slightly; smooth tempo, constant tension."
+          },
+          {
+            "name": "Deficit Push-Up",
+            "equipment": "bodyweight",
+            "sets": 3,
+            "recommendedReps": "8–15",
+            "recommendedRest": "90–120 s",
+            "primaryMuscles": [
+              "Pectoralis major"
+            ],
+            "secondaryMuscles": [
+              "Anterior deltoid",
+              "Triceps brachii"
+            ],
+            "description": "Hands elevated for extra ROM; keep core tight and wrists neutral; full depth."
+          }
+        ]
+      },
+      {
+        "group": "Back",
+        "workouts": [
+          {
+            "name": "Conventional Deadlift",
+            "equipment": "barbell",
+            "sets": 3,
+            "recommendedReps": "3–6",
+            "recommendedRest": "3–5 min",
+            "primaryMuscles": [
+              "Erector spinae",
+              "Gluteus maximus",
+              "Hamstrings"
+            ],
+            "secondaryMuscles": [
+              "Latissimus dorsi",
+              "Trapezius",
+              "Forearm flexors",
+              "Core"
+            ],
+            "description": "Hip hinge; bar close; push floor; lockout with glutes without hyperextension."
+          },
+          {
+            "name": "Barbell Row (Strict/Pendlay)",
+            "equipment": "barbell",
+            "sets": 3,
+            "recommendedReps": "6–10",
+            "recommendedRest": "2–3 min",
+            "primaryMuscles": [
+              "Latissimus dorsi",
+              "Rhomboids",
+              "Middle trapezius"
+            ],
+            "secondaryMuscles": [
+              "Posterior deltoid",
+              "Biceps brachii",
+              "Erector spinae"
+            ],
+            "description": "Hinge to ~45° or pull from floor; row to lower ribs; neutral spine; retract at top."
+          },
+          {
+            "name": "Weighted Pull-Up",
+            "equipment": "bodyweight",
+            "sets": 3,
+            "recommendedReps": "5–8 or 8–12",
+            "recommendedRest": "2–3 min",
+            "primaryMuscles": [
+              "Latissimus dorsi",
+              "Teres major"
+            ],
+            "secondaryMuscles": [
+              "Biceps brachii",
+              "Brachialis",
+              "Lower trapezius"
+            ],
+            "description": "Depress/retract; pull chin over bar; control down; add weight as able."
+          },
+          {
+            "name": "Chin-Up",
+            "equipment": "bodyweight",
+            "sets": 3,
+            "recommendedReps": "6–10",
+            "recommendedRest": "2–3 min",
+            "primaryMuscles": [
+              "Latissimus dorsi",
+              "Biceps brachii"
+            ],
+            "secondaryMuscles": [
+              "Brachialis",
+              "Teres major",
+              "Scapular retractors"
+            ],
+            "description": "Supinated grip; drive elbows down; full extension bottom; no swing."
+          },
+          {
+            "name": "Inverted Row",
+            "equipment": "bodyweight",
+            "sets": 3,
+            "recommendedReps": "8–12",
+            "recommendedRest": "90–120 s",
+            "primaryMuscles": [
+              "Middle trapezius",
+              "Rhomboids"
+            ],
+            "secondaryMuscles": [
+              "Latissimus dorsi",
+              "Posterior deltoid",
+              "Biceps brachii"
+            ],
+            "description": "Body in plank; row chest to bar; adjust foot position for difficulty."
+          },
+          {
+            "name": "Lat Pulldown (To Chest)",
+            "equipment": "cable",
+            "sets": 3,
+            "recommendedReps": "8–12",
+            "recommendedRest": "90–120 s",
+            "primaryMuscles": [
+              "Latissimus dorsi"
+            ],
+            "secondaryMuscles": [
+              "Teres major",
+              "Biceps brachii",
+              "Lower trapezius"
+            ],
+            "description": "Slight lean; pull to upper chest; initiate with lats; avoid shrugging."
+          },
+          {
+            "name": "Straight-Arm Pulldown",
+            "equipment": "cable",
+            "sets": 3,
+            "recommendedReps": "10–15",
+            "recommendedRest": "60–90 s",
+            "primaryMuscles": [
+              "Latissimus dorsi"
+            ],
+            "secondaryMuscles": [
+              "Teres major",
+              "Long head triceps (stability)"
+            ],
+            "description": "Arms long; hinge slightly; sweep to thighs; constant tension."
+          },
+          {
+            "name": "Single-Arm KB Row (Supported)",
+            "equipment": "kettlebell",
+            "sets": 3,
+            "recommendedReps": "8–12 each side",
+            "recommendedRest": "90–120 s",
+            "primaryMuscles": [
+              "Latissimus dorsi",
+              "Rhomboids"
+            ],
+            "secondaryMuscles": [
+              "Posterior deltoid",
+              "Biceps brachii",
+              "Spinal erectors (stability)"
+            ],
+            "description": "Chest supported; row toward hip; keep torso square; squeeze back at top."
+          },
+          {
+            "name": "KB Gorilla Row",
+            "equipment": "kettlebell",
+            "sets": 3,
+            "recommendedReps": "8–12 each side",
+            "recommendedRest": "90–120 s",
+            "primaryMuscles": [
+              "Latissimus dorsi",
+              "Rhomboids"
+            ],
+            "secondaryMuscles": [
+              "Posterior deltoid",
+              "Core (anti‑rotation)"
+            ],
+            "description": "Wide stance; hinge; alternate rows; resist rotation; steady tempo."
+          }
+        ]
+      },
+      {
+        "group": "Shoulders",
+        "workouts": [
+          {
+            "name": "Overhead Press (Barbell)",
+            "equipment": "barbell",
+            "sets": 3,
+            "recommendedReps": "5–8",
+            "recommendedRest": "2–3 min",
+            "primaryMuscles": [
+              "Anterior deltoid",
+              "Medial deltoid"
+            ],
+            "secondaryMuscles": [
+              "Triceps brachii",
+              "Upper trapezius",
+              "Serratus anterior"
+            ],
+            "description": "Grip just outside shoulders; brace; press overhead; avoid lumbar overextension."
+          },
+          {
+            "name": "Dumbbell Shoulder Press",
+            "equipment": "dumbbell",
+            "sets": 3,
+            "recommendedReps": "8–12",
+            "recommendedRest": "90–120 s",
+            "primaryMuscles": [
+              "Anterior deltoid",
+              "Medial deltoid"
+            ],
+            "secondaryMuscles": [
+              "Triceps brachii",
+              "Upper trapezius"
+            ],
+            "description": "Seated/standing; slight arc; ribs down; control the descent."
+          },
+          {
+            "name": "KB Press (Strict)",
+            "equipment": "kettlebell",
+            "sets": 3,
+            "recommendedReps": "5–8 each side",
+            "recommendedRest": "2–3 min",
+            "primaryMuscles": [
+              "Anterior deltoid",
+              "Medial deltoid"
+            ],
+            "secondaryMuscles": [
+              "Triceps brachii",
+              "Upper trapezius",
+              "Core stabilizers"
+            ],
+            "description": "Rack tightly; press with vertical forearm; minimal lean; steady control."
+          },
+          {
+            "name": "Pike Push-Up",
+            "equipment": "bodyweight",
+            "sets": 3,
+            "recommendedReps": "6–12",
+            "recommendedRest": "90–120 s",
+            "primaryMuscles": [
+              "Anterior deltoid"
+            ],
+            "secondaryMuscles": [
+              "Triceps brachii",
+              "Upper trapezius",
+              "Serratus anterior"
+            ],
+            "description": "Hips high; head forward; elbows out slightly; full ROM; avoid head dive."
+          },
+          {
+            "name": "Lateral Raise (Cable)",
+            "equipment": "cable",
+            "sets": 3,
+            "recommendedReps": "12–15",
+            "recommendedRest": "60–90 s",
+            "primaryMuscles": [
+              "Medial deltoid"
+            ],
+            "secondaryMuscles": [
+              "Supraspinatus"
+            ],
+            "description": "Lead with elbow; raise to ~70–90°; slow eccentric; keep tension."
+          },
+          {
+            "name": "Cable Rear Delt Fly",
+            "equipment": "cable",
+            "sets": 3,
+            "recommendedReps": "12–15",
+            "recommendedRest": "60–90 s",
+            "primaryMuscles": [
+              "Posterior deltoid"
+            ],
+            "secondaryMuscles": [
+              "Middle trapezius",
+              "Rhomboids"
+            ],
+            "description": "Arms at shoulder height; open horizontally; avoid upper trap dominance."
+          },
+          {
+            "name": "Face Pull",
+            "equipment": "cable",
+            "sets": 3,
+            "recommendedReps": "12–15",
+            "recommendedRest": "60–90 s",
+            "primaryMuscles": [
+              "Posterior deltoid",
+              "External rotators"
+            ],
+            "secondaryMuscles": [
+              "Middle/lower trapezius",
+              "Rhomboids"
+            ],
+            "description": "Rope high; pull to nose/forehead; externally rotate; control return."
+          }
+        ]
+      },
+      {
+        "group": "Quadriceps",
+        "workouts": [
+          {
+            "name": "Back Squat (High‑Bar)",
+            "equipment": "barbell",
+            "sets": 3,
+            "recommendedReps": "5–8",
+            "recommendedRest": "2–3 min",
+            "primaryMuscles": [
+              "Quadriceps"
+            ],
+            "secondaryMuscles": [
+              "Gluteus maximus",
+              "Adductors",
+              "Spinal erectors"
+            ],
+            "description": "Upright torso; knees track over toes; depth to parallel as mobility allows."
+          },
+          {
+            "name": "Front Squat",
+            "equipment": "barbell",
+            "sets": 3,
+            "recommendedReps": "5–8",
+            "recommendedRest": "2–3 min",
+            "primaryMuscles": [
+              "Quadriceps"
+            ],
+            "secondaryMuscles": [
+              "Gluteus maximus",
+              "Core",
+              "Upper back (isometric)"
+            ],
+            "description": "Front rack high; elbows up; sit between heels; stay balanced mid‑foot."
+          },
+          {
+            "name": "Goblet Squat",
+            "equipment": "kettlebell",
+            "sets": 3,
+            "recommendedReps": "8–12",
+            "recommendedRest": "90–120 s",
+            "primaryMuscles": [
+              "Quadriceps"
+            ],
+            "secondaryMuscles": [
+              "Gluteus maximus",
+              "Adductors",
+              "Core"
+            ],
+            "description": "Hold bell at chest; sit deep; keep torso tall; knees out; smooth drive up."
+          },
+          {
+            "name": "KB Double Front Squat",
+            "equipment": "kettlebell",
+            "sets": 4,
+            "recommendedReps": "5–8",
+            "recommendedRest": "2–3 min",
+            "primaryMuscles": [
+              "Quadriceps"
+            ],
+            "secondaryMuscles": [
+              "Gluteus maximus",
+              "Core",
+              "Upper back"
+            ],
+            "description": "Double rack; elbows forward; sit between feet; brace; powerful stand."
+          },
+          {
+            "name": "Bulgarian Split Squat",
+            "equipment": "bodyweight",
+            "sets": 3,
+            "recommendedReps": "8–12 each side",
+            "recommendedRest": "90–120 s",
+            "primaryMuscles": [
+              "Quadriceps"
+            ],
+            "secondaryMuscles": [
+              "Gluteus maximus",
+              "Adductors"
+            ],
+            "description": "Back foot elevated; vertical shin bias; descend under control; drive through front foot."
+          },
+          {
+            "name": "Leg Extension",
+            "equipment": "cable",
+            "sets": 3,
+            "recommendedReps": "10–15",
+            "recommendedRest": "60–90 s",
+            "primaryMuscles": [
+              "Quadriceps"
+            ],
+            "secondaryMuscles": [],
+            "description": "Pad above ankle; extend fully with squeeze; slow lower to keep tension."
+          }
+        ]
+      },
+      {
+        "group": "Hamstrings/Glutes",
+        "workouts": [
+          {
+            "name": "Romanian Deadlift",
+            "equipment": "barbell",
+            "sets": 3,
+            "recommendedReps": "6–10",
+            "recommendedRest": "2–3 min",
+            "primaryMuscles": [
+              "Hamstrings",
+              "Gluteus maximus"
+            ],
+            "secondaryMuscles": [
+              "Erector spinae",
+              "Adductors"
+            ],
+            "description": "Soft knees; hinge hips back; maintain flat back; stretch hamstrings; stand tall."
+          },
+          {
+            "name": "KB Romanian Deadlift",
+            "equipment": "kettlebell",
+            "sets": 4,
+            "recommendedReps": "6–10",
+            "recommendedRest": "2–3 min",
+            "primaryMuscles": [
+              "Hamstrings",
+              "Gluteus maximus"
+            ],
+            "secondaryMuscles": [
+              "Erector spinae"
+            ],
+            "description": "Bells close to legs; push hips back; feel hamstring tension; snap to stand."
+          },
+          {
+            "name": "KB Swing",
+            "equipment": "kettlebell",
+            "sets": "6–8",
+            "recommendedReps": "12–15 EMOM or 15–20",
+            "recommendedRest": "60–90 s",
+            "primaryMuscles": [
+              "Gluteus maximus",
+              "Hamstrings"
+            ],
+            "secondaryMuscles": [
+              "Erector spinae",
+              "Forearm flexors",
+              "Core"
+            ],
+            "description": "Hinge pattern; hike pass; drive hips; float bell; plank at top; no shoulder lift."
+          },
+          {
+            "name": "Leg Curl",
+            "equipment": "cable",
+            "sets": 3,
+            "recommendedReps": "10–15",
+            "recommendedRest": "60–90 s",
+            "primaryMuscles": [
+              "Hamstrings"
+            ],
+            "secondaryMuscles": [
+              "Gastrocnemius"
+            ],
+            "description": "Align knee with machine axis; curl smoothly; hold briefly; slow eccentric."
+          },
+          {
+            "name": "Glute Bridge (Loaded/KB)",
+            "equipment": "kettlebell",
+            "sets": 3,
+            "recommendedReps": "10–15",
+            "recommendedRest": "60–90 s",
+            "primaryMuscles": [
+              "Gluteus maximus"
+            ],
+            "secondaryMuscles": [
+              "Hamstrings",
+              "Erector spinae"
+            ],
+            "description": "Posterior pelvic tilt; drive through heels; lockout with glutes; avoid lumbar arch."
+          },
+          {
+            "name": "Nordic Hamstring (Eccentric)",
+            "equipment": "bodyweight",
+            "sets": 3,
+            "recommendedReps": "5–8",
+            "recommendedRest": "120–180 s",
+            "primaryMuscles": [
+              "Hamstrings"
+            ],
+            "secondaryMuscles": [
+              "Gluteus maximus (isometric)"
+            ],
+            "description": "Partner/anchor ankles; lean forward slowly; catch with hands; strong eccentrics."
+          }
+        ]
+      },
+      {
+        "group": "Biceps",
+        "workouts": [
+          {
+            "name": "Barbell Curl",
+            "equipment": "barbell",
+            "sets": 3,
+            "recommendedReps": "8–12",
+            "recommendedRest": "60–90 s",
+            "primaryMuscles": [
+              "Biceps brachii"
+            ],
+            "secondaryMuscles": [
+              "Brachialis",
+              "Brachioradialis"
+            ],
+            "description": "Elbows pinned; curl with control; squeeze at top; resist swing."
+          },
+          {
+            "name": "Cable Curl",
+            "equipment": "cable",
+            "sets": 3,
+            "recommendedReps": "10–15",
+            "recommendedRest": "60–90 s",
+            "primaryMuscles": [
+              "Biceps brachii"
+            ],
+            "secondaryMuscles": [
+              "Brachialis",
+              "Brachioradialis"
+            ],
+            "description": "Stand tall; curl through full ROM; constant cable tension; slow return."
+          },
+          {
+            "name": "Cable Hammer Curl (Rope)",
+            "equipment": "cable",
+            "sets": 3,
+            "recommendedReps": "10–15",
+            "recommendedRest": "60–90 s",
+            "primaryMuscles": [
+              "Brachialis",
+              "Brachioradialis"
+            ],
+            "secondaryMuscles": [
+              "Biceps brachii"
+            ],
+            "description": "Neutral grip; keep elbows close; lift with forearms neutral; controlled eccentric."
+          },
+          {
+            "name": "KB Curl (Supinated or Neutral)",
+            "equipment": "kettlebell",
+            "sets": 3,
+            "recommendedReps": "8–12",
+            "recommendedRest": "60–90 s",
+            "primaryMuscles": [
+              "Biceps brachii"
+            ],
+            "secondaryMuscles": [
+              "Brachialis",
+              "Brachioradialis"
+            ],
+            "description": "Let bell hang; supinated or neutral; curl without shoulder sway."
+          },
+          {
+            "name": "KB Hammer Curl (Suitcase)",
+            "equipment": "kettlebell",
+            "sets": 3,
+            "recommendedReps": "10–12",
+            "recommendedRest": "60–90 s",
+            "primaryMuscles": [
+              "Brachialis",
+              "Brachioradialis"
+            ],
+            "secondaryMuscles": [
+              "Biceps brachii"
+            ],
+            "description": "Neutral wrist; elbows by sides; steady tempo; minimize momentum."
+          },
+          {
+            "name": "Chin‑Up (Biceps Emphasis)",
+            "equipment": "bodyweight",
+            "sets": 3,
+            "recommendedReps": "6–10",
+            "recommendedRest": "2–3 min",
+            "primaryMuscles": [
+              "Biceps brachii",
+              "Latissimus dorsi"
+            ],
+            "secondaryMuscles": [
+              "Brachialis",
+              "Forearm flexors"
+            ],
+            "description": "Supinated grip; think biceps pull; full elbow flexion; control down."
+          }
+        ]
+      },
+      {
+        "group": "Triceps",
+        "workouts": [
+          {
+            "name": "Close‑Grip Bench Press",
+            "equipment": "barbell",
+            "sets": 3,
+            "recommendedReps": "5–8",
+            "recommendedRest": "2–3 min",
+            "primaryMuscles": [
+              "Triceps brachii"
+            ],
+            "secondaryMuscles": [
+              "Pectoralis major",
+              "Anterior deltoid"
+            ],
+            "description": "Hands shoulder‑width; elbows in; bar to lower chest; strong lockout."
+          },
+          {
+            "name": "Dips (Triceps Focus)",
+            "equipment": "bodyweight",
+            "sets": 3,
+            "recommendedReps": "6–12",
+            "recommendedRest": "120–180 s",
+            "primaryMuscles": [
+              "Triceps brachii"
+            ],
+            "secondaryMuscles": [
+              "Anterior deltoid",
+              "Pectoralis major"
+            ],
+            "description": "Torso upright; elbows track back; control depth; avoid shoulder glide."
+          },
+          {
+            "name": "Triceps Pushdown (Rope/Bar)",
+            "equipment": "cable",
+            "sets": 3,
+            "recommendedReps": "10–15",
+            "recommendedRest": "60–90 s",
+            "primaryMuscles": [
+              "Triceps brachii"
+            ],
+            "secondaryMuscles": [],
+            "description": "Shoulders down; elbows fixed; extend and squeeze; slow return."
+          },
+          {
+            "name": "Overhead Cable Triceps Extension (Rope)",
+            "equipment": "cable",
+            "sets": 3, 
+            "recommendedReps": "10–12",
+            "recommendedRest": "60–90 s",
+            "primaryMuscles": [
+              "Triceps brachii (long head)"
+            ],
+            "secondaryMuscles": [],
+            "description": "Elbows narrow; arms overhead; full extension; stretch at bottom."
+          },
+          {
+            "name": "Skull Crushers (Lying Triceps Extension)",
+            "equipment": "barbell",
+            "sets": 3,
+            "recommendedReps": "8–12",
+            "recommendedRest": "90–120 s",
+            "primaryMuscles": [
+              "Triceps brachii (all heads)"
+            ],
+            "secondaryMuscles": [
+              "Forearm extensors (stabilizers)"
+            ],
+            "description": "Lower bar to forehead/behind head; elbows fixed; extend without flaring."
+          },
+          {
+            "name": "Dumbbell Skull Crushers",
+            "equipment": "dumbbell",
+            "sets": 3,
+            "recommendedReps": "8–12",
+            "recommendedRest": "90–120 s",
+            "primaryMuscles": [
+              "Triceps brachii"
+            ],
+            "secondaryMuscles": [],
+            "description": "Neutral grip; arc behind head; extend smoothly; avoid shoulder motion."
+          }
+        ]
+      },
+      {
+        "group": "Calves",
+        "workouts": [
+          {
+            "name": "Standing Calf Raise",
+            "equipment": "bodyweight",
+            "sets": 3,
+            "recommendedReps": "12–20",
+            "recommendedRest": "60–90 s",
+            "primaryMuscles": [
+              "Gastrocnemius"
+            ],
+            "secondaryMuscles": [
+              "Soleus"
+            ],
+            "description": "Knees straight; rise tall and pause; slow lower for full stretch."
+          },
+          {
+            "name": "Seated Calf Raise (Improvised)",
+            "equipment": "bodyweight",
+            "sets": 3,
+            "recommendedReps": "12–20",
+            "recommendedRest": "60–90 s",
+            "primaryMuscles": [
+              "Soleus"
+            ],
+            "secondaryMuscles": [
+              "Gastrocnemius"
+            ],
+            "description": "Knees bent ~90°; press through forefoot; hold peak; slow descent."
+          },
+          {
+            "name": "Cable Calf Raise (Belt/Improvised)",
+            "equipment": "cable",
+            "sets": 3,
+            "recommendedReps": "12–20",
+            "recommendedRest": "60–90 s",
+            "primaryMuscles": [
+              "Gastrocnemius"
+            ],
+            "secondaryMuscles": [
+              "Soleus"
+            ],
+            "description": "Balanced stance; stable torso; smooth tempo; full ROM each rep."
+          }
+        ]
+      },
+      {
+        "group": "Core",
+        "workouts": [
+          {
+            "name": "Hanging Leg Raise",
+            "equipment": "bodyweight",
+            "sets": 3,
+            "recommendedReps": "8–12",
+            "recommendedRest": "60–90 s",
+            "primaryMuscles": [
+              "Rectus abdominis"
+            ],
+            "secondaryMuscles": [
+              "Hip flexors",
+              "Obliques (stability)"
+            ],
+            "description": "Posterior pelvic tilt; raise with abs not swing; slow lower under control."
+          },
+          {
+            "name": "Ab Wheel Rollout",
+            "equipment": "bodyweight",
+            "sets": 3,
+            "recommendedReps": "6–12",
+            "recommendedRest": "90–120 s",
+            "primaryMuscles": [
+              "Rectus abdominis"
+            ],
+            "secondaryMuscles": [
+              "Obliques",
+              "Lats (stability)"
+            ],
+            "description": "Brace hard; roll to end‑range without sag; pull back with abs engaged."
+          },
+          {
+            "name": "Dead Bug",
+            "equipment": "bodyweight",
+            "sets": 3,
+            "recommendedReps": "8–12 each side",
+            "recommendedRest": "60–90 s",
+            "primaryMuscles": [
+              "Rectus abdominis",
+              "Transversus abdominis"
+            ],
+            "secondaryMuscles": [
+              "Hip flexors (low load)"
+            ],
+            "description": "Low back gently pressed; alternate arm/leg reach; smooth, controlled tempo."
+          }
+        ]
+      }
+    ]
+  }
+}
