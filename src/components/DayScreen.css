@@ -1,0 +1,168 @@
+.dayscreen-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 0 12px;
+  background-color: #121212; /* dark background */
+  min-height: 100vh;
+  color: #e0e0e0; /* high contrast text */
+  font-size: 16px;
+}
+
+.dayscreen-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: nowrap; /* disable wrapping to avoid button displacement */
+  margin-bottom: 12px;
+}
+
+.dayscreen-header-title {
+  font-weight: 700;
+  min-width: 160px; /* fixed width keeps button stable */
+  flex-grow: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 1.1rem;
+  color: #ffffffcc;
+}
+
+.dayscreen-mark-complete-btn {
+  flex-shrink: 0; /* prevent shrinking to keep position */
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+/* Card background & text colors */
+.dayscreen-exercise-card {
+  position: relative;
+  padding: 16px;
+  margin-bottom: 16px;
+  border-radius: 12px;
+  background-color: #1e1e1e; /* dark card background */
+  border: 1px solid #333333;
+  width: 100%;
+  color: #e0e0e0;
+  box-shadow: 0 1px 3px rgba(255,255,255,0.07);
+  transition: background-color 0.3s ease;
+}
+
+.dayscreen-exercise-card.notStarted {
+  background-color: #292929;
+  border-color: #444444;
+  color: #bbbbbb;
+}
+
+.dayscreen-exercise-card.inProgress {
+  background-color: #263238; /* dark blue grey */
+  border-color: #455a64;
+  color: #b0bec5;
+}
+
+.dayscreen-exercise-card.completed {
+  background-color: #2e7d32; /* dark green */
+  border-color: #66bb6a;
+  color: #e8f5e9;
+}
+
+.dayscreen-exercise-complete-icon {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  color: #81c784;
+  filter: drop-shadow(0 0 3px #81c784aa);
+}
+
+.dayscreen-exercise-name {
+  font-weight: 700;
+  margin-bottom: 6px;
+  word-break: break-word;
+  font-size: 1.1rem;
+}
+
+.dayscreen-exercise-desc {
+  margin-bottom: 8px;
+  font-style: italic;
+  color: #cccccc;
+  word-break: break-word;
+  font-size: 0.9rem;
+}
+
+.dayscreen-exercise-completed-sets {
+  font-weight: 600;
+  margin-bottom: 12px;
+  font-size: 1rem;
+}
+
+.dayscreen-exercise-chip-row {
+  margin-bottom: 12px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.dayscreen-progress-bar {
+  height: 12px;
+  border-radius: 6px;
+  margin-bottom: 12px;
+  background-color: #444444;
+}
+
+.dayscreen-progress-bar.notStarted .MuiLinearProgress-bar {
+  background-color: #757575;
+  transition: width 0.4s ease-in-out;
+}
+
+.dayscreen-progress-bar.inProgress .MuiLinearProgress-bar {
+  background-color: #81d4fa;
+  transition: width 0.4s ease-in-out;
+}
+
+.dayscreen-progress-bar.completed .MuiLinearProgress-bar {
+  background-color: #4caf50;
+  transition: width 0.4s ease-in-out;
+}
+
+.dayscreen-exercise-btn-row {
+  margin-top: 12px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
+.dayscreen-exercise-btn-row button {
+  font-size: 0.9rem;
+  min-width: 80px;
+  padding: 6px 12px;
+}
+
+/* Floating add button at bottom right */
+.dayscreen-fab-add {
+  position: fixed;
+  right: 16px;
+  bottom: calc(72px + env(safe-area-inset-bottom));
+  z-index: 1400;
+}
+
+@media (max-width: 480px) {
+  .dayscreen-container {
+    padding: 0 8px;
+    font-size: 14px;
+  }
+  .dayscreen-exercise-name {
+    font-size: 1rem;
+  }
+  .dayscreen-exercise-desc {
+    font-size: 0.85rem;
+  }
+  .dayscreen-exercise-completed-sets {
+    font-size: 0.9rem;
+  }
+  .dayscreen-exercise-btn-row button {
+    min-width: 70px;
+    font-size: 0.85rem;
+  }
+}

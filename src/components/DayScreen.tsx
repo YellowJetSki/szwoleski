@@ -1,18 +1,33 @@
 import * as React from 'react';
 import {
-  Button, Snackbar, Alert, Stack, Typography, Box, Chip, Paper, Fab, LinearProgress, Tooltip,
-  Dialog, DialogTitle, DialogContent, DialogContentText, DialogActions
+  Button,
+  Snackbar,
+  Alert,
+  Stack,
+  Typography,
+  Box,
+  Chip,
+  Paper,
+  Fab,
+  LinearProgress,
+  Tooltip,
+  Dialog,
+  DialogTitle,
+  DialogContent,
+  DialogContentText,
+  DialogActions,
 } from '@mui/material';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import RestartAltIcon from '@mui/icons-material/RestartAlt';
 import DoneAllIcon from '@mui/icons-material/DoneAll';
 import AddIcon from '@mui/icons-material/Add';
-import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 import type { DayEntry } from '../types';
 import AddWorkoutModal from './AddWorkoutModal';
 import { useApiData, useWeekPlan } from '../data/store';
 import { acquireWakeLock, releaseWakeLock } from '../utils/wakeLock';
+
+import './DayScreen.css';
 
 const parseRestToSec = (rest: string): number => {
   if (!rest) return 90;
@@ -30,7 +45,7 @@ const parseRestToSec = (rest: string): number => {
   return isNaN(n) ? 90 : Math.round(n);
 };
 
-type Props = { dayLabel: 'Mon'|'Tue'|'Wed'|'Thu'|'Fri'|'Sat'|'Sun' };
+type Props = { dayLabel: 'Mon' | 'Tue' | 'Wed' | 'Thu' | 'Fri' | 'Sat' | 'Sun' };
 
 export default function DayScreen({ dayLabel }: Props) {
   const { catalog } = useApiData();
@@ -39,19 +54,16 @@ export default function DayScreen({ dayLabel }: Props) {
   const [dayCompleted, setDayCompleted] = React.useState(false);
   const [open, setOpen] = React.useState(false);
 
-  // Confirm dialogs
   const [confirmOpen, setConfirmOpen] = React.useState(false);
   const [confirmRemoveOpen, setConfirmRemoveOpen] = React.useState(false);
   const [removeIndex, setRemoveIndex] = React.useState<number | null>(null);
 
-  // Rest timer
   const [toastOpen, setToastOpen] = React.useState(false);
   const [toastMsg, setToastMsg] = React.useState('');
   const [restLeft, setRestLeft] = React.useState<number | null>(null);
   const [restPaused, setRestPaused] = React.useState(false);
   const restTimerRef = React.useRef<number | null>(null);
 
-  // Wake lock
   React.useEffect(() => {
     const manage = async () => {
       if (restLeft !== null && restLeft > 0 && !restPaused) await acquireWakeLock();
@@ -61,7 +73,6 @@ export default function DayScreen({ dayLabel }: Props) {
     return () => { releaseWakeLock(); };
   }, [restLeft, restPaused]);
 
-  // Countdown
   React.useEffect(() => {
     if (restLeft === null || restPaused) return;
     if (restLeft <= 0) {
@@ -101,18 +112,10 @@ export default function DayScreen({ dayLabel }: Props) {
     return entries.length > 0 && entries.every(isExerciseComplete);
   };
 
-  // Hydrate description from API if missing
-  const hydrateDescription = (name: string, incoming?: string) => {
-    if (incoming && incoming.trim().length > 0) return incoming;
-    const match = catalog.flatMap(g => g.workouts).find(w => w.name === name);
-    return (match as any)?.description || '';
-  };
-
-  // CRUD
   const handleAddEntry = (entry: DayEntry) => {
     const day = dayLabel;
     const list = [...plan[day]];
-    const item = { ...entry, description: hydrateDescription(entry.name, (entry as any).description), completedSets: 0 } as any;
+    const item = { ...entry, completedSets: 0 } as any;
     list.push(item);
     const next = { ...plan, [day]: list };
     setPlan(next);
@@ -165,7 +168,6 @@ export default function DayScreen({ dayLabel }: Props) {
     setRemoveIndex(null);
   };
 
-  // Day actions
   const resetDayConfirmed = () => {
     const day = dayLabel;
     const list = plan[day].map(ex => ({ ...ex, completedSets: 0 } as any));
@@ -180,62 +182,31 @@ export default function DayScreen({ dayLabel }: Props) {
     else setDayCompleted(computeDayComplete(plan[dayLabel]));
   };
 
-  // Success border/icon only
-  const rowPaperSx = (complete: boolean) => ({
-    position: 'relative',
-    padding: 8,
-    marginBottom: 8,
-    backgroundColor: 'transparent',
-    color: (theme: any) => theme.palette.text.primary,
-    borderRadius: 4,
-    border: '1px solid',
-    borderColor: complete ? ((theme: any) => theme.palette.success.main) : ((theme: any) => theme.palette.divider),
-    boxShadow: 'none',
-    width: '100%'
-  });
-
-  const overlayCheckSx = (theme: any) => ({
-    position: 'absolute' as const,
-    inset: 0,
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    pointerEvents: 'none',
-    color: theme.palette.success.main
-  });
-
-  const textWrapSx = {
-    whiteSpace: 'normal' as const,
-    overflowWrap: 'anywhere' as const,
-    wordBreak: 'break-word' as const,
-    lineHeight: 1.4
+  const plannedSetsToNumberSafe = (ex: DayEntry) => {
+    const n = plannedSetsToNumber(ex.sets);
+    return n > 0 ? n : 3;
   };
-
-  const header = (
-    <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', mb: 1, gap: 1, flexWrap: 'wrap' }}>
-      <Typography variant="subtitle1" sx={{ ...textWrapSx, fontWeight: 600, flex: '1 1 auto', minWidth: 200 }}>
-        {dayCompleted ? 'All exercises complete' : 'Exercises'}
-      </Typography>
-      <Button
-        startIcon={<DoneAllIcon />}
-        variant={dayCompleted ? 'contained' : 'outlined'}
-        color={dayCompleted ? 'success' : 'inherit'}
-        onClick={toggleDayComplete}
-        disabled={dayCompleted}
-        aria-disabled={dayCompleted}
-        sx={{ flex: '0 0 auto' }}
-      >
-        {dayCompleted ? 'Day complete' : 'Mark complete'}
-      </Button>
-    </Box>
-  );
 
   const entries = plan[dayLabel];
 
   return (
     <>
-      <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
-        {header}
+      <Box className="dayscreen-container">
+        <Box className="dayscreen-header">
+          <Typography variant="subtitle1" className="dayscreen-header-title">
+            {dayCompleted ? 'All exercises complete' : 'Exercises'}
+          </Typography>
+          <Button
+            startIcon={<DoneAllIcon />}
+            variant={dayCompleted ? 'contained' : 'outlined'}
+            color={dayCompleted ? 'success' : 'inherit'}
+            onClick={toggleDayComplete}
+            disabled={dayCompleted}
+            className="dayscreen-mark-complete-btn"
+          >
+            {dayCompleted ? 'Day complete' : 'Mark complete'}
+          </Button>
+        </Box>
 
         <Box sx={{ mb: 1 }}>
           <Button startIcon={<RestartAltIcon />} color="warning" variant="outlined" onClick={() => setConfirmOpen(true)}>
@@ -255,71 +226,67 @@ export default function DayScreen({ dayLabel }: Props) {
           </Typography>
         )}
 
-        <Stack spacing={1}>
+        <Stack spacing={2}>
           {entries.map((ex: any, i) => {
-            const total = plannedSetsToNumber(ex.sets);
+            const total = plannedSetsToNumberSafe(ex);
             const done = ex.completedSets ?? 0;
             const complete = total > 0 && done >= total;
             const pct = Math.min(100, Math.round((done / Math.max(1, total)) * 100));
-            const desc = hydrateDescription(ex.name, ex.description);
+
+            const status =
+              done === 0
+                ? 'notStarted'
+                : done > 0 && done < total
+                ? 'inProgress'
+                : 'completed';
 
             return (
-              <Paper key={`${ex.name}-${i}`} elevation={0} sx={rowPaperSx(complete)}>
+              <Paper
+                key={`${ex.name}-${i}`}
+                elevation={1}
+                className={`dayscreen-exercise-card ${status}`}
+              >
                 {complete && (
-                  <Box sx={(theme) => overlayCheckSx(theme)}>
-                    <CheckCircleIcon sx={{ fontSize: 40, opacity: 0.9 }} />
+                  <Box className="dayscreen-exercise-complete-icon">
+                    <CheckCircleIcon fontSize="large" />
                   </Box>
                 )}
 
-                <Typography variant="subtitle1" sx={{ ...textWrapSx, fontWeight: 700, mb: 0.25 }}>
+                <Typography variant="h6" className="dayscreen-exercise-name" title={ex.description}>
                   {ex.name}
                 </Typography>
 
-                {desc.trim().length > 0 && (
-                  <Typography variant="body2" sx={{ ...textWrapSx, opacity: complete ? 0.95 : 0.92, mb: 0.5 }}>
-                    {desc}
+                {ex.description && (
+                  <Typography variant="body2" className="dayscreen-exercise-desc">
+                    {ex.description}
                   </Typography>
                 )}
 
-                <Typography variant="caption" sx={{ display: 'block', mb: 0.5, opacity: 0.9 }}>
-                  Completed {done}/{total} sets
+                <Typography variant="subtitle1" className="dayscreen-exercise-completed-sets">
+                  Completed sets: {done}/{total}
                 </Typography>
+
+                <Stack direction="row" spacing={1} className="dayscreen-exercise-chip-row" flexWrap="wrap">
+                  <Chip label={`Reps: ${ex.reps}`} color="primary" size="medium" />
+                  <Chip label={`Rest: ${ex.rest}`} color="primary" size="medium" />
+                  {ex.primaryMuscles?.length > 0 && (
+                    <Chip label={`Primary: ${ex.primaryMuscles.join(', ')}`} size="medium" />
+                  )}
+                  {ex.secondaryMuscles?.length > 0 && (
+                    <Chip label={`Secondary: ${ex.secondaryMuscles.join(', ')}`} size="medium" />
+                  )}
+                  {ex.equipment && <Chip label={ex.equipment} size="medium" />}
+                </Stack>
 
                 <LinearProgress
                   variant="determinate"
                   value={pct}
-                  sx={{
-                    height: 6,
-                    borderRadius: 4,
-                    mb: 0.5,
-                    bgcolor: (theme) => theme.palette.action.hover,
-                    '& .MuiLinearProgress-bar': { bgcolor: (theme) => theme.palette.primary.main }
-                  }}
+                  className={`dayscreen-progress-bar ${status}`}
                 />
 
-                <Stack direction="row" spacing={1} sx={{ flexWrap: 'wrap', rowGap: 0.5, mb: 0.75, alignItems: 'center' }}>
-                  <Typography variant="body2" sx={{ ...textWrapSx }}>
-                    Reps: {ex.reps}
-                  </Typography>
-                  <Chip size="small" variant="outlined" label={`Rest ${ex.rest}`} />
-                  {ex.primaryMuscles?.length > 0 && (
-                    <Chip size="small" variant="outlined" icon={<InfoOutlinedIcon />} label={`Primary: ${ex.primaryMuscles.join(', ')}`} />
-                  )}
-                  {ex.secondaryMuscles?.length > 0 && (
-                    <Chip size="small" variant="outlined" label={`Secondary: ${ex.secondaryMuscles.join(', ')}`} />
-                  )}
-                  {ex.equipment && <Chip size="small" label={ex.equipment} />}
-                </Stack>
-
-                <Stack spacing={0.75} alignItems="stretch" sx={{ minWidth: 112 }}>
-                  <Button
-                    size="small"
-                    variant={complete ? 'contained' : 'outlined'}
-                    color={complete ? 'warning' : 'primary'}
-                    onClick={() => decrementSet(i)}
-                    sx={{ minHeight: 36 }}
-                  >
-                    Decrease
+                <Stack direction="row" spacing={1} className="dayscreen-exercise-btn-row" flexWrap="wrap">
+                  <Button size="small" variant="outlined" color="primary" onClick={() => decrementSet(i)}>
+                    - Set
                   </Button>
                   <Button
                     size="small"
@@ -327,16 +294,15 @@ export default function DayScreen({ dayLabel }: Props) {
                     color={complete ? 'success' : 'primary'}
                     onClick={() => incrementSet(i)}
                     disabled={complete}
-                    sx={{ minHeight: 38, ...(complete ? { '&.Mui-disabled': { opacity: 0.9 } } : {}) }}
                   >
                     {complete ? 'Done' : 'Done set'}
                   </Button>
                   <Button
                     size="small"
+                    variant="outlined"
                     color="error"
                     startIcon={<DeleteForeverIcon />}
                     onClick={() => requestRemove(i)}
-                    sx={{ minHeight: 36 }}
                   >
                     Remove
                   </Button>
@@ -345,20 +311,13 @@ export default function DayScreen({ dayLabel }: Props) {
             );
           })}
         </Stack>
-
-        <Box sx={{ height: `calc(72px + env(safe-area-inset-bottom))` }} />
       </Box>
 
       {!open && (
         <Tooltip title="Add workout">
           <Fab
             color="primary"
-            sx={(theme) => ({
-              position: 'fixed',
-              right: 16,
-              bottom: `calc(88px + env(safe-area-inset-bottom))`,
-              zIndex: theme.zIndex.tooltip
-            })}
+            className="dayscreen-fab-add"
             onClick={() => setOpen(true)}
             aria-label="Add workout"
           >
@@ -367,13 +326,7 @@ export default function DayScreen({ dayLabel }: Props) {
         </Tooltip>
       )}
 
-      <AddWorkoutModal
-        open={open}
-        onClose={() => setOpen(false)}
-        muscleGroups={catalog}
-        onAdd={handleAddEntry}
-        onAddCustomToCatalog={() => {}}
-      />
+      <AddWorkoutModal open={open} onClose={() => setOpen(false)} muscleGroups={catalog} onAdd={handleAddEntry} onAddCustom={() => {}} />
 
       <Dialog open={confirmOpen} onClose={() => setConfirmOpen(false)} fullWidth maxWidth="xs">
         <DialogTitle>Reset today’s tracking?</DialogTitle>
@@ -383,8 +336,12 @@ export default function DayScreen({ dayLabel }: Props) {
           </DialogContentText>
         </DialogContent>
         <DialogActions>
-          <Button onClick={() => setConfirmOpen(false)} color="inherit">Cancel</Button>
-          <Button color="warning" variant="contained" onClick={resetDayConfirmed}>Reset</Button>
+          <Button onClick={() => setConfirmOpen(false)} color="inherit">
+            Cancel
+          </Button>
+          <Button color="warning" variant="contained" onClick={resetDayConfirmed}>
+            Reset
+          </Button>
         </DialogActions>
       </Dialog>
 
@@ -396,26 +353,16 @@ export default function DayScreen({ dayLabel }: Props) {
           </DialogContentText>
         </DialogContent>
         <DialogActions>
-          <Button onClick={() => setConfirmRemoveOpen(false)} color="inherit">Cancel</Button>
-          <Button color="error" variant="contained" onClick={() => {
-            if (removeIndex === null) return;
-            const day = dayLabel;
-            const list = [...plan[day]];
-            list.splice(removeIndex, 1);
-            const next = { ...plan, [day]: list };
-            setPlan(next);
-            setDayCompleted(computeDayComplete(list));
-            setConfirmRemoveOpen(false);
-            setRemoveIndex(null);
-          }}>Remove</Button>
+          <Button onClick={() => setConfirmRemoveOpen(false)} color="inherit">
+            Cancel
+          </Button>
+          <Button color="error" variant="contained" onClick={confirmRemove}>
+            Remove
+          </Button>
         </DialogActions>
       </Dialog>
 
-      <Snackbar
-        open={toastOpen}
-        onClose={() => setToastOpen(false)}
-        anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
-      >
+      <Snackbar open={toastOpen} onClose={() => setToastOpen(false)} anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}>
         <Alert
           onClose={() => setToastOpen(false)}
           severity={restLeft && restLeft > 0 ? 'info' : 'success'}
@@ -433,7 +380,9 @@ export default function DayScreen({ dayLabel }: Props) {
                   </Button>
                 </>
               ) : (
-                <Button color="inherit" size="small" onClick={() => setToastOpen(false)}>OK</Button>
+                <Button color="inherit" size="small" onClick={() => setToastOpen(false)}>
+                  OK
+                </Button>
               )}
             </Stack>
           }
