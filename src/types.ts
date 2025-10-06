@@ -6,6 +6,7 @@ export type Workout = {
   recommendedRest: string;
   primaryMuscles: string[];
   secondaryMuscles: string[];
+  description: string;  // added description optionally
 };
 
 export type MuscleGroup = {
@@ -27,6 +28,7 @@ export type DayEntry = {
   equipment?: Workout['equipment'];
   primaryMuscles?: string[];
   secondaryMuscles?: string[];
+  description: string;    // added description optionally
   // runtime tracking
   completedSets?: number;
 };
